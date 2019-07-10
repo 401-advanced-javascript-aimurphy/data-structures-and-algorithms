@@ -24,7 +24,7 @@ class LinkedList{
       current = current.next;
     }
     current.next=new Node(value);
-    this.tail=current.next+'';
+    this.tail=current.next;
   }
 
   insert(value){
