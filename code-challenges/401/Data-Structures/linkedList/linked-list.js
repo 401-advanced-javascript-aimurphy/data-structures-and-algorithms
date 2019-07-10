@@ -2,9 +2,9 @@
 // Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
 class Node {
-  constructor(value, place){
+  constructor(value){
     this.value = value;
-    this.place = place;
+    // this.place = place;
     this.next = null;
   }
 };
@@ -16,48 +16,66 @@ class LinkedList{
     this.tail = null;
   }
 
-  // Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.
+  // Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.--GOOD
   insert(value){
 
     if(!this.head){
-      this.head = new Node(value, 1);
+      this.head = new Node(value);
       return;
     }
 
     let current = this.head;
     let newHead = new Node(value);
     newHead.next = current;
-    newHead.place = current.place-1;
+    // newHead.place = current.place-1;
     this.head = newHead;
 
   }
-
   // Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
   includes(target){
 
     let current = this.head;
+    let tru = [];
+    let fal = [];
+
+    if (current.value===target){tru.push(true);}
 
     while(current.next){
       current = current.next;
-
-      console.log('currently',current.value);
-
-      if(current.value=target){
-        return true+'🐸';
-      }else{return false;}
+      let tern = (current ? current.value===target : null);
+      if(tern===true){
+        tru.push(tern);
+      }else{
+        fal.push(tern);
+      }
     }
-    
+    console.log(tru,fal);
+    console.log(tru.length);
+    if (tru.length>0){
+      return true;
+    }else{
+      return false;
+    }
+
   }
 
   // Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List.
   toString(){
-    // code here
+    let list = [];
+    let current = this.head;
+    while(current.next){
+      list.push(current.value);
+      current=current.next;
+    }
+    // console.log('arr',list);
+    let string = list.toString();
+    return string;
   }
 
   append(value){
 
     if(!this.head){
-      this.head = new Node(value, 1);
+      this.head = new Node(value);
       return;
     }
     // if(!this.tail){
@@ -70,46 +88,47 @@ class LinkedList{
       current = current.next;
     }
 
-    current.next = new Node(value, 0);
-    current.next.place = current.place+1;
+    current.next = new Node(value);
+    // current.next.place = current.place+1;
     this.tail = current.next;
 
   }
 
   insertBefore(value, target){
-    // if(!this.head){
-    //   this.head = new Node(value);
-    //   return;
-    // }
-    // console.log(this.head);
+    if(!this.head){
+      this.head = new Node(value);
+      return;
+    }
     let current = this.head;
-    console.log(current.value, 'head');
 
     while(current.next.value!==target){
       current = current.next;
-      // if(current.next===target){
-        console.log(target);
-        console.log(current.value, 'while');
-      // }
     }
-    console.log(current.value, 'out');
 
     let newNode = new Node(value);
-    newNode.place = this.tail.place+1;
+    // newNode.place = this.tail.place+1;
     newNode.next = current.next;
     current.next = newNode;
-
-    console.log(newNode, 'new');
-
-    // while(current.next!==null){
-    //   current.place++;
-    // }
 
   }
 
   insertAfter(value, target){
-    // code
+    if(!this.head){
+      this.head = new Node(value);
+      return;
+    }
+    let current = this.head;
+
+    while(current.value!==target){
+      current = current.next;
+    }
+
+    let newNode = new Node(value);
+    // newNode.place = this.tail.place+1;
+    newNode.next = current.next;
+    current.next = newNode;
   }
+
 
 }
 
@@ -119,8 +138,11 @@ let list = new LinkedList();
 list.append('frog');
 list.append('here');
 list.insert('herro');
-list.insertBefore('kermit the🐸', 'frog');
-
+list.insertBefore('the🐸', 'frog');
+list.insertAfter('kermit', 'herro');
+list.includes('kermit');
+list.includes('pie');
+list.toString();
 console.log('list',list);
 
 
