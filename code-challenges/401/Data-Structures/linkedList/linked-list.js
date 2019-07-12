@@ -136,7 +136,7 @@ class LinkedList {
     }
 
     if(k===0){
-      console.log('k=0');
+      console.log('k=0', this.tail);
       return this.tail;
     }
 
@@ -152,10 +152,8 @@ class LinkedList {
       return this.head;
     }
     if (k > counter) {
+      console.log('Error: number exceeds list length');
       return 'Error: number exceeds list length';
-    }
-    if (counter <= 1) {
-      console.log('your link list length is only one')
     }
     current = this.head;
     while (counter > k) {
@@ -176,9 +174,10 @@ list.insertAfter('kermit', 'herro');
 list.includes('kermit');
 list.includes('pie');
 list.toString();
-list.kthFromEnd(2);
+// list.kthFromEnd(2);
 list.kthFromEnd(0);
-list.kthFromEnd(4);
+// list.kthFromEnd(4);
+list.kthFromEnd(8);
 
 
 
