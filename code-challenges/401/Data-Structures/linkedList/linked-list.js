@@ -1,25 +1,27 @@
+// import { ModuleMap } from "jest-haste-map";
+
 // Features
 // Create a Node class that has properties for the value stored in the Node, and a pointer to the next Node.
 
 class Node {
-  constructor(value){
+  constructor(value) {
     this.value = value;
     // this.place = place;
     this.next = null;
   }
 };
 
-class LinkedList{
+class LinkedList {
   // Within your LinkedList class, include a head property. Upon instantiation, an empty Linked List should be created.
-  constructor(){
+  constructor() {
     this.head = null;
     this.tail = null;
   }
 
   // Define a method called insert which takes any value as an argument and adds a new node with that value to the head of the list with an O(1) Time performance.--GOOD
-  insert(value){
+  insert(value) {
 
-    if(!this.head){
+    if (!this.head) {
       this.head = new Node(value);
       return;
     }
@@ -32,49 +34,49 @@ class LinkedList{
 
   }
   // Define a method called includes which takes any value as an argument and returns a boolean result depending on whether that value exists as a Node’s value somewhere within the list.
-  includes(target){
+  includes(target) {
 
     let current = this.head;
     let tru = [];
     let fal = [];
 
-    if (current.value===target){tru.push(true);}
+    if (current.value === target) { tru.push(true); }
 
-    while(current.next){
+    while (current.next) {
       current = current.next;
-      let tern = (current ? current.value===target : null);
-      if(tern===true){
+      let tern = (current ? current.value === target : null);
+      if (tern === true) {
         tru.push(tern);
-      }else{
+      } else {
         fal.push(tern);
       }
     }
-    console.log(tru,fal);
+    console.log(tru, fal);
     console.log(tru.length);
-    if (tru.length>0){
+    if (tru.length > 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
 
   }
 
   // Define a method called toString which takes in no arguments and returns a string representing all the values in the Linked List.
-  toString(){
+  toString() {
     let list = [];
     let current = this.head;
-    while(current.next){
+    while (current.next) {
       list.push(current.value);
-      current=current.next;
+      current = current.next;
     }
     // console.log('arr',list);
     let string = list.toString();
     return string;
   }
 
-  append(value){
+  append(value) {
 
-    if(!this.head){
+    if (!this.head) {
       this.head = new Node(value);
       return;
     }
@@ -84,7 +86,7 @@ class LinkedList{
     // }
 
     let current = this.head;
-    while(current.next){
+    while (current.next) {
       current = current.next;
     }
 
@@ -94,47 +96,78 @@ class LinkedList{
 
   }
 
-  insertBefore(value, target){
-    if(!this.head){
+  insertBefore(value, target) {
+    if (!this.head) {
       this.head = new Node(value);
       return;
     }
     let current = this.head;
 
-    while(current.next.value!==target){
+    while (current.next.value !== target) {
       current = current.next;
     }
 
     let newNode = new Node(value);
-    // newNode.place = this.tail.place+1;
     newNode.next = current.next;
     current.next = newNode;
 
   }
 
-  insertAfter(value, target){
-    if(!this.head){
+  insertAfter(value, target) {
+    if (!this.head) {
       this.head = new Node(value);
       return;
     }
     let current = this.head;
 
-    while(current.value!==target){
+    while (current.value !== target) {
       current = current.next;
     }
 
     let newNode = new Node(value);
-    // newNode.place = this.tail.place+1;
     newNode.next = current.next;
     current.next = newNode;
   }
 
+  kthFromEnd(k) {
+    if (k < 0) {
+      console.log('k<0');
+      return 'Error: entry must be within list length';
+    }
+
+    if(k===0){
+      console.log('k=0');
+      return this.tail;
+    }
+
+    let current = this.head;
+    let counter = -1;
+    while (current !== null) {
+      counter++;
+      current = current.next;
+    }
+    console.log(counter);
+    if (k===counter){
+      console.log('k=counter',counter, this.head);
+      return this.head;
+    }
+    if (k > counter) {
+      return 'Error: number exceeds list length';
+    }
+    if (counter <= 1) {
+      console.log('your link list length is only one')
+    }
+    current = this.head;
+    while (counter > k) {
+      counter--;
+      current = current.next;
+    }
+    console.log(current.value)
+  }
 
 }
 
 let list = new LinkedList();
-// list.append('og');
-// list.append('dog');
 list.append('frog');
 list.append('here');
 list.insert('herro');
@@ -143,7 +176,13 @@ list.insertAfter('kermit', 'herro');
 list.includes('kermit');
 list.includes('pie');
 list.toString();
-console.log('list',list);
+list.kthFromEnd(2);
+list.kthFromEnd(0);
+list.kthFromEnd(4);
+
 
 
 // At no time should an exception or stack trace be shown to the end user. Catch and handle any such exceptions and return a printed value or operation which cleanly represents the state and either stops execution cleanly, or provides the user with clear direction and output.
+
+
+module.exports = LinkedList;
