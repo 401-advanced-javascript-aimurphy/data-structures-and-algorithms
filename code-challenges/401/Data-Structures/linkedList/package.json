@@ -1,0 +1,14 @@
+{
+  "name": "linkedlist",
+  "version": "1.0.0",
+  "description": "We created a list class and extended it by giving it several methods for users to add new entries and search through it. You can add before or after a particular node or at the beginning or end of the entire list.",
+  "main": "linked-list.js",
+  "scripts": {
+    "test": "--jest --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.8.0"
+  }
+}
