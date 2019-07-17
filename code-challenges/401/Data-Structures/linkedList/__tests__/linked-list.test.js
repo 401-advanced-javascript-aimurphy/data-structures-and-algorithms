@@ -36,8 +36,8 @@ describe('includes', ()=>{
   });
 });
 
-describe('includes', ()=>{
-  it('checks if a value is present in the code', ()=>{
+describe('kth from end', ()=>{
+  it('returns the value of the node from a specified node k nodes from the end... node node node', ()=>{
     let list = new LinkedList();
     list.append('frog');
     list.append('here');
@@ -54,3 +54,18 @@ describe('includes', ()=>{
     expect(list.kthFromEnd(0).value).toBe('here');
   });
 });
+
+
+// describe('merge', ()=>{
+//   it('merges two lists, like teeth in a zipper', ()=>{
+//     let list = new LinkedList();
+//     let listToo = new LinkedList();
+//     list.append('b');
+//     list.append('c');
+//     list.insert('a');
+//     listToo.append('b');
+//     listToo.append('c');
+//     listToo.insert('a');
+//     expect(list.kthFromEnd(0).value).toBe('here');
+//   });
+// });

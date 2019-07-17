@@ -1,3 +1,9 @@
+'use-strict';
+
+// function mergeLists(list1,list2){
+  
+// }
+
 // import { ModuleMap } from "jest-haste-map";
 
 // Features
@@ -198,3 +204,28 @@ listToo.append('a');
 
 
 module.exports = LinkedList;
+
+function mergeLists(list1,list2){
+  let current1 = list1.head;
+  let current2 = list2.head;
+
+  while(current1.next||current2.next){
+
+    let v1n = current1.next.next;
+    let v2n = current2.next.next;
+
+    let v1 = current1.next;
+    let v2 = current2.next;
+
+    current2.next = v1;
+
+    current1.next = current2;
+    current
+
+    current1=current1.next;
+    current2=current2.next;
+  }
+  
+}
+
+mergeLists(list,listToo);
