@@ -30,7 +30,7 @@ describe('stack class', ()=>{
 
   it('Can successfully instantiate an empty stack', ()=>{
 
-    expect().toBe();
+    expect(stack instanceof Stack).toBeTruthy();
   });
 
 });
@@ -65,7 +65,7 @@ describe('queue class', ()=>{
 
   it('Can successfully instantiate an empty queue', ()=>{
 
-    expect().toBe();
+    expect(que instanceof Queue).toBeTruthy();
   });
 });
 
