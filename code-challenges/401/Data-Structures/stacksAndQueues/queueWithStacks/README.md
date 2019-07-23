@@ -14,3 +14,6 @@ All of theses methods have a big O of O(1) as they are readily accesible regardl
 * `enqueue` - can enter item(s) into a queue
 * `dequeue` - can remove item(s) from the queue until empty
 * `peek` - can peek into queue seeing expected value
+
+## UML
+![](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/blob/master/code-challenges/401/Data-Structures/stacksAndQueues/queueWithStacks/img/queuewstacks.jpg?raw=true)
