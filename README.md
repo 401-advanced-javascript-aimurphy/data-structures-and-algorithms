@@ -19,5 +19,7 @@
 
 ### 401 Challenges
 * [Linked Lists](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/linkedList)
+* [Linked List Merge](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/llMerge)
+* [Stacks and Queues](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/stacksAndQueues)
 
 _*completed 301 challeges can alse be viewed at [this repo](https://github.com/aimurphyii/data-structures-and-algorithms)._ 
