@@ -1,5 +1,7 @@
 'use strict';
 
+import { isModuleDeclaration } from "@babel/types";
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -52,3 +54,5 @@ class Stack {
     return this.top;
   }
 }
+
+module.exports={Node,Queue};
