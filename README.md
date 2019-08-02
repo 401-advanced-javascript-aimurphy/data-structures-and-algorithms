@@ -23,5 +23,6 @@
 * [Stacks and Queues](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/stacksAndQueues)
 * [Queueing with Stacks](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/stacksAndQueues/queueWithStacks)
 * [Queue: FIFO Animal Shelter](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/fifoAnimalShelter)
+* [Multi Bracket Validation](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/multiBracketValidation)
 
 _*completed 301 challeges can alse be viewed at [this repo](https://github.com/aimurphyii/data-structures-and-algorithms)._ 
