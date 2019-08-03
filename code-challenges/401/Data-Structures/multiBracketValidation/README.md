@@ -29,7 +29,7 @@ Input	Output	Why
 [}	FALSE	error closing }. Doesn’t match opening.
 
 ## Solution
-![](./IMG_7935.jpg)
+![](./friyaypartyboard.jpg)
 
 
 
