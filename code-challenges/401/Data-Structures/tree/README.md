@@ -30,5 +30,5 @@ Since we are traveling the tree from the root, across for as long as the height,
 Our method takes in a tree and begins at the root. from the root it will first look left, then right, and reassign the `current` value based on the queue order. WE will loop through until our inTree queue is empty.
 
 ### UML*
-![whiteboarding for the breadth traversal](./breadthuml.jpg)
+![whiteboarding for the breadth traversal](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/blob/master/code-challenges/401/Data-Structures/tree/breadthuml.JPG)
 **subout the `shift` for a `dequeue`, and the `push` for  `enqueue`.* 
