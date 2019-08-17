@@ -1,167 +1,185 @@
 'use strict';
 
-class Node {
-  constructor(value) {
+class Node{
+  constructor(value){
     this.value = value;
     this.left = null;
     this.right = null;
   }
 }
 
-class Queue {
-  constructor() {
-    // this.front = null;
+class Queue{
+  constructor(){
+    this.front = null;
     this.back = null;
     this.queue = [];
   }
-  enqueue(value) {
+  enqueue(value){
     this.queue.push(value);
     this.back = value;
-    console.log(this.back);
+    // console.log(this.back);
   }
-  dequeue() {
+  dequeue(){
     let value = this.queue.shift();
     this.front = this.queue[0];
     return value;
   }
-  peek() {
+  peek(){
     return this.queue[0];
   }
 }
 
-class BinaryTree {
-  constructor(root = null) {
-    this.root = root;
-    this.max = max;
+class BinaryTree{
+  constructor(root=null){
+    this.root=root;
   }
 
-  insert(value) {
-    if (!this.root) {
-      this.root = new Node(value);
-    } else {
+  insert(value){
+     if(!this.root){
+       this.root=new Node(value);
+       }else{
 
-      let inTree = new Queue;
+    let inTree = new Queue;
+    let outTree = new Queue;
 
-      inTree.enqueue(tree.root);
-      let current;
+    inTree.enqueue(tree.root);
+    let current;
 
-      while (inTree.peek()) {
-        current = inTree.dequeue();
+   while(inTree.peek()){
+     current = inTree.dequeue();
 
-        if (current.left === null) {
-          current.left = new Node(value);
-          break;
-        } else {
-          inTree.enqueue(current.left);
-        };
-        if (current.right === null) {
-          current.right = new Node(value);
-          break;
-        } else {
-          inTree.enqueue(current.right);
-        };
-      }
+     if(current.left===null){
+       current.left=new Node(value);
+       break;
+       }else{
+         inTree.enqueue(current.left);
+      };
+      if(current.right===null){
+        current.right=new Node(value);
+        break;
+      }else{
+        inTree.enqueue(current.right);
+     };
+
+      outTree.enqueue(current);
+    }
+       }
+
+  }
+
+  preorder(){
+    let results = [];
+    
+    let _walk =(node)=> {
+    results.push(node.value);
+
+    if(node.left)_walk(node.left);
+    if(node.right) _walk(node.right);
+    };
+
+    _walk(this.root);
+    return results;
+  }
+
+  inOrder(){
+    let results = [];
+
+    let _walk=(node)=>{
+      if(node.left)_walk(node.left);
+      results.push(node.value);
+
+      if(node.right)_walk(node.right);
+      results.push(node.value);
     }
 
+    _walk(this.root);
+    return results;
   }
 
-}
-preorder(){
-  let results = [];
-
-  let _walk = (node) => {
-    results.push(node.value);
-
-    if (node.left) _walk(node.left);
-    if (node.right) _walk(node.right);
+  postOrder(){
+    let results = [];
+    
+    let _walk =(node)=> {
+      if(node.left)_walk(node.left);
+      if(node.right)_walk(node.right);
+      results.push(node.value);
+    };
+  
+    _walk(this.root);
+  
+    return results;
   };
 
-  _walk(this.root);
-  return results;
-}
+  levelOrder(){
 
-inOrder(){
-  let results = [];
+    let results = [];
+    let nodeQueue=[];
 
-  let _walk = (node) => {
-    if (node.left) _walk(node.left);
-    results.push(node.value);
+    nodeQueue.push(this.root);
 
-    if (node.right) _walk(node.right);
-    results.push(node.value);
+    while(nodeQueue.lenth){
+      let current=nodeQueue.shift();
+      results.push(current.value);
+      if(current.left)nodeQueue.push(current.left);
+      if(current.right)nodeQueue.push(current.right);
+    }
+    return results;
   }
 
-  _walk(this.root);
-  return results;
-}
 
-postOrder(){
-  let results = [];
+  
+  breadthFirst(){
+    // code things
 
-  let _walk = (node) => {
-    if (node.left) _walk(node.left);
-    if (node.right) _walk(node.right);
-    results.push(node.value);
-  };
+    if(!this.root)return null;
 
-  _walk(this.root);
+    let inTree = new Queue;
+    let outTree = new Queue;
 
-  return results;
-};
+    inTree.enqueue(tree.root);
+    let current;
 
-levelOrder(){
+    while(inTree.peek()){
+      current = inTree.dequeue();
 
-  let results = [];
-  let nodeQueue = [];
+      if (current.left)inTree.enqueue(current.left);
+      if(current.right)inTree.enqueue(current.right);
 
-  nodeQueue.push(this.root);
-
-  while (nodeQueue.lenth) {
-    let current = nodeQueue.shift();
-    results.push(current.value);
-    if (current.left) nodeQueue.push(current.left);
-    if (current.right) nodeQueue.push(current.right);
+      console.log(current.value);
+      outTree.enqueue(current);
+    }
   }
-  return results;
-}
 
+  findMaximumValue(){
 
-breadthFirst(){
-  // code things
+    if(!this.root)return null;
 
-  if (!this.root) return null;
+    let max = 0;
 
-  let inTree = new Queue;
-  let outTree = new Queue;
+    let _walk =(node)=> {
+      if (node.value>max)max=node.value;
+      if(node.left)_walk(node.left);
+      if(node.right) _walk(node.right);
+    };
 
-  inTree.enqueue(tree.root);
-  let current;
-
-  while (inTree.peek()) {
-    current = inTree.dequeue();
-
-    if (current.left) inTree.enqueue(current.left);
-    if (current.right) inTree.enqueue(current.right);
-
-    console.log(current.value);
-    outTree.enqueue(current);
+    _walk(this.root);
+    
+    return max;
   }
 }
 
-findMaximumValue(){
+let tree = new BinaryTree();
 
-  if (!this.root) return null;
 
-  let max = 0;
+tree.insert(7);
+tree.insert(8);
+tree.insert(9);
+tree.insert(10);
+tree.insert(4);
+tree.insert(5);
+tree.insert(6);
 
-  let _walk = (node) => {
-    if (node.value > max) max = node.value;
-    if (node.left) _walk(node.left);
-    if (node.right) _walk(node.right);
-  };
+// console.log('tree is',tree);
 
-  _walk(this.root);
-
-  return max;
-}
-}
+tree.breadthFirst();
+tree.findMaximumValue();
