@@ -10,14 +10,14 @@ class Node{
 
 class Queue{
   constructor(){
-    // this.front = null;
+    this.front = null;
     this.back = null;
     this.queue = [];
   }
   enqueue(value){
     this.queue.push(value);
     this.back = value;
-    console.log(this.back);
+    // console.log(this.back);
   }
   dequeue(){
     let value = this.queue.shift();
@@ -32,13 +32,41 @@ class Queue{
 class BinaryTree{
   constructor(root=null){
     this.root=root;
-    this.max=max;
   }
 
   insert(value){
-    
+     if(!this.root){
+       this.root=new Node(value);
+       }else{
+
+    let inTree = new Queue;
+    let outTree = new Queue;
+
+    inTree.enqueue(tree.root);
+    let current;
+
+   while(inTree.peek()){
+     current = inTree.dequeue();
+
+     if(current.left===null){
+       current.left=new Node(value);
+       break;
+       }else{
+         inTree.enqueue(current.left);
+      };
+      if(current.right===null){
+        current.right=new Node(value);
+        break;
+      }else{
+        inTree.enqueue(current.right);
+     };
+
+      outTree.enqueue(current);
+    }
+       }
+
   }
-  
+
   preorder(){
     let results = [];
     
@@ -99,6 +127,7 @@ class BinaryTree{
   }
 
 
+  
   breadthFirst(){
     // code things
 
@@ -125,16 +154,16 @@ class BinaryTree{
 
     if(!this.root)return null;
 
-    this.max = 0;
+    let max = 0;
 
     let _walk =(node)=> {
-      if (node.value>this.max)this.max=node.value;
+      if (node.value>max)max=node.value;
       if(node.left)_walk(node.left);
       if(node.right) _walk(node.right);
     };
 
     _walk(this.root);
     
-    return this.max;
+    return max;
   }
 }
