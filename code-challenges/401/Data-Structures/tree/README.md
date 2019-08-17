@@ -30,8 +30,10 @@ Since we are traveling the tree from the root, across for as long as the height,
 ## Solution
 Our method takes in a tree and begins at the root. from the root it will first look left, then right, and reassign the `current` value based on the queue order. WE will loop through until our inTree queue is empty.
 
+
 ## UML*
 ![whiteboarding for the breadth traversal](breadthuml.JPG)
+
 **subout the `shift` for a `dequeue`, and the `push` for  `enqueue`.* 
 
 
