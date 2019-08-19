@@ -126,7 +126,7 @@ class BinaryTree{
 
     nodeQueue.push(this.root);
 
-    while(nodeQueue.lenth){
+    while(nodeQueue.length){
       let current=nodeQueue.shift();
       results.push(current.value);
       if(current.left)nodeQueue.push(current.left);

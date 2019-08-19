@@ -62,7 +62,20 @@ describe('BinaryTree.postOrder', () => {
     tree.add(1);
     tree.add(2);
     tree.add(3);
-    let order = tree.postOrder();
-    expect(order).toBe(expected);
+    let treeOrder = tree.postOrder();
+    console.log(treeOrder);
+    expect(treeOrder).toBe(expected);
+  });
+});
+
+describe('BinaryTree.findMaximumValue', () => {
+  it('Can successfully return maximum value in a tree', () => {
+    let expected=3;
+    let tree = new BinaryTree();
+    tree.add(1);
+    tree.add(2);
+    tree.add(3);
+    let value = tree.findMaximumValue();
+    expect(value).toBe(expected);
   });
 });
