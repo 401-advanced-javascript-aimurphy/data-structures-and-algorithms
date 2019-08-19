@@ -1,0 +1,14 @@
+{
+  "name": "tree",
+  "version": "1.0.0",
+  "description": "<!-- Short summary or background information -->",
+  "main": "tree.js",
+  "scripts": {
+    "test": "--jest --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
