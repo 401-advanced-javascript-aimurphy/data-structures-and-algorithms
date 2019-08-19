@@ -34,37 +34,48 @@ class BinaryTree{
     this.root=root;
   }
 
-  insert(value){
-     if(!this.root){
-       this.root=new Node(value);
-       }else{
-
-    let inTree = new Queue;
-    let outTree = new Queue;
-
-    inTree.enqueue(tree.root);
-    let current;
-
-   while(inTree.peek()){
-     current = inTree.dequeue();
-
-     if(current.left===null){
-       current.left=new Node(value);
-       break;
-       }else{
-         inTree.enqueue(current.left);
-      };
-      if(current.right===null){
-        current.right=new Node(value);
-        break;
+  add(value){
+    if(!this.root){
+      this.root=new Node(value);
       }else{
-        inTree.enqueue(current.right);
-     };
 
-      outTree.enqueue(current);
+        let inTree = new Queue;
+
+        inTree.enqueue(this.root);
+        let current;
+
+        while(inTree.peek()){
+        current = inTree.dequeue();
+
+        if(current.left===null){
+         current.left=new Node(value);
+         break;
+        }else{
+          inTree.enqueue(current.left);
+        };
+
+        if(current.right===null){
+          current.right=new Node(value);
+          break;
+        }else{
+          inTree.enqueue(current.right);
+        };
+      }
     }
-       }
+  }
 
+  contains(value){
+    let container=false;
+
+    let _walk =(node)=> {
+      if(node.value===value) container=true;
+  
+      if(node.left)_walk(node.left);
+      if(node.right) _walk(node.right);
+    };
+  
+    _walk(this.root);
+    return container;
   }
 
   preorder(){
@@ -89,7 +100,6 @@ class BinaryTree{
       results.push(node.value);
 
       if(node.right)_walk(node.right);
-      results.push(node.value);
     }
 
     _walk(this.root);
@@ -111,7 +121,6 @@ class BinaryTree{
   };
 
   levelOrder(){
-
     let results = [];
     let nodeQueue=[];
 
@@ -125,18 +134,14 @@ class BinaryTree{
     }
     return results;
   }
-
-
   
   breadthFirst(){
-    // code things
-
     if(!this.root)return null;
 
     let inTree = new Queue;
     let outTree = new Queue;
 
-    inTree.enqueue(tree.root);
+    inTree.enqueue(this.root);
     let current;
 
     while(inTree.peek()){
@@ -167,3 +172,73 @@ class BinaryTree{
     return max;
   }
 }
+
+class BinarySearchTree{
+  constructor(root=null){
+    this.root=root;
+  }
+
+  add(value){
+    if(!this.root){
+      this.root=new Node(value);
+      }else{
+
+        let inTree = new Queue;
+
+        inTree.enqueue(this.root);
+        let current;
+
+        while(inTree.peek()){
+        current = inTree.dequeue();
+
+        if(value<current.value&&current.left===null){
+         current.left=new Node(value);
+         break;
+        }else{
+          inTree.enqueue(current.left);
+        };
+
+        if(value>current.value&&current.right===null){
+          current.right=new Node(value);
+          break;
+        }else{
+          inTree.enqueue(current.right);
+        };
+      }
+    }
+  }
+
+  contains(value){
+    let container=false;
+
+    let _walk =(node)=> {
+      if(node.value===value) container=true;
+  
+      if(node.left)_walk(node.left);
+      if(node.right) _walk(node.right);
+    };
+  
+    _walk(this.root);
+    return container;
+  }
+}
+
+module.exports=BinaryTree;
+// let tree = new BinaryTree();
+
+
+// tree.add(7);
+// tree.add(8);
+// tree.add(9);
+// tree.add(10);
+// tree.add(4);
+// tree.add(5);
+// tree.add(6);
+
+// console.log(tree.root);
+
+// tree.breadthFirst();
+// tree.findMaximumValue();
+// tree.contains(17);
+// tree.contains(4);
+// tree.levelOrder();

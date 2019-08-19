@@ -15,6 +15,3 @@ Traverse the tree using a recursive function, checking each node's value with an
 
 ## Solution
 ![Austin's Whiteboarding of challenge](./UML.JPG)
-
-
-
