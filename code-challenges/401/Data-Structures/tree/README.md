@@ -15,7 +15,7 @@ Define a method named `contains` that accepts a value, and returns a boolean ind
 Big O will be O(h) for our depth-first traversals and `contains` methods; O(hw) for breadthfirst and levelorder, as well as the `add` methods.
 
 ## API
-BinaryTree
+#### BinaryTree
 * `add(value)`
 * `contains(value)`
 * `preorder`
@@ -25,7 +25,7 @@ BinaryTree
 * `breadthfirst`
 * `findmaximumvalue`
 
-BinarySearchTree
+#### BinarySearchTree
 * `add(value)`
 * `contains(value)`
 
