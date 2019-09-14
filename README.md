@@ -26,5 +26,8 @@
 * [Multi Bracket Validation](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/multiBracketValidation)
 * [Tree](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/tree)
 * [FizzBuzz Tree](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/fizzBuzzTree)
+* [Insertion Sort](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/allSortsOfSorts/insertionSort)
+* [Merge Sort](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/allSortsOfSorts/mergeSort)
+* [Quick Sort](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/allSortsOfSorts/quickSort)
 
 _*completed 301 challeges can alse be viewed at [this repo](https://github.com/aimurphyii/data-structures-and-algorithms)._ 
