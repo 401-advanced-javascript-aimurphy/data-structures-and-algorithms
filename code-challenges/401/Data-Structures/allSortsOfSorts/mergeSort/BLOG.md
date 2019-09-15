@@ -3,7 +3,7 @@ It is a method for sorting by splitting up your data in halves, and halves and h
 ## how do you do it?
 Oh gosh, like that☝️. So you take the data and recursively divide it in half. Compare and sort and recombine until it returns the sorted array.
 
-## pseudo code form our teacher
+## pseudo code from our teacher
 ```
 ALGORITHM Mergesort(arr)
     DECLARE n <-- arr.length
