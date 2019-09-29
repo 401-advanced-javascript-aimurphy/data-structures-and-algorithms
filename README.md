@@ -31,4 +31,5 @@
 * [Quick Sort](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/allSortsOfSorts/quickSort)
 * [Hash tables](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/hashtable)
   * [Repeated Word](https://github.com/401-advanced-javascript-aimurphy/data-structures-and-algorithms/tree/master/code-challenges/401/Data-Structures/repeatedWord)
+  
 _*completed 301 challeges can alse be viewed at [this repo](https://github.com/aimurphyii/data-structures-and-algorithms)._ 
