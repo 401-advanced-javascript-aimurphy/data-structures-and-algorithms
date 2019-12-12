@@ -8,6 +8,33 @@ Write a function named sortBackwards that takes in an array of numbers and retur
 
 const sortBackwards = (arr) => {
   // Solution code here...
+  // console.log(arr, 'before')
+  let temp;
+  console.log(arr, 'before')
+  for(let i=arr.length-1; i<=0; i--){
+    if(arr[i-1]<arr[i]){
+      temp = arr[i];
+      arr[i] = arr[i-1];
+      arr[i-1] = temp;
+      // i=0;
+      console.log(arr,'process')
+    }
+    if(i===0){
+      // i=0;
+      console.log(arr, 'the end?');
+      if(arr[i]<arr[i+1]){
+        temp = arr[i];
+        arr[i]=arr[i+1];
+        arr[i]=temp;
+        
+        console.log(arr, 'the end?');
+      }
+    }
+
+  }
+
+  console.log(arr, 'after');
+  return arr;
 
 };
 
